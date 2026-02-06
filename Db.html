@@ -53,23 +53,6 @@
         <a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary font-medium">
             <span class="material-icons-round">dashboard</span> Dashboard
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-muted hover:bg-white/5 rounded-lg">
-            <span class="material-icons-round">analytics</span> Analytics
-        </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-muted hover:bg-white/5 rounded-lg">
-            <span class="material-icons-round">devices</span> Devices
-        </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-muted hover:bg-white/5 rounded-lg">
-            <span class="material-icons-round">notifications</span>
-            Alerts
-            <span class="ml-auto bg-red text-xs px-2 py-0.5 rounded-full">3</span>
-        </a>
-
-        <p class="mt-8 px-4 text-xs uppercase tracking-widest text-muted">System</p>
-
-        <a class="flex items-center gap-3 px-4 py-3 text-muted hover:bg-white/5 rounded-lg">
-            <span class="material-icons-round">settings</span> Configuration
-        </a>
     </nav>
 
     <div class="mt-auto py-4">
@@ -96,62 +79,39 @@
             class="w-full bg-card pl-10 pr-4 py-2 rounded-lg text-sm outline-none"
         />
     </div>
-
-    <div class="flex items-center gap-6">
-        <span class="material-icons-round text-muted">dark_mode</span>
-        <span class="material-icons-round text-muted relative">
-            notifications
-            <span class="absolute -top-1 -right-1 w-2 h-2 bg-red rounded-full"></span>
-        </span>
-
-        <div class="flex items-center gap-3">
-            <div class="text-right">
-                <p class="text-sm font-semibold">Abhijay Dhar   </p>
-                <p class="text-xs text-muted">Chief Engineer</p>
-            </div>
-            <div class="w-10 h-10 rounded-full border-2 border-primary flex items-center justify-center">
-                <span class="material-icons-round">person</span>
-            </div>
-        </div>
-    </div>
 </header>
 
 <!-- CONTENT -->
 <section class="p-8 space-y-8 max-w-7xl mx-auto">
 
-<!-- TITLE -->
-<div class="flex justify-between items-start">
-    <div>
-        <h1 class="text-3xl font-bold">System Dashboard</h1>
-        <p class="text-muted mt-1">Real-time telemetry from Sedaxis</p>
-    </div>
-    <div class="flex gap-3">
-        <button class="px-4 py-2 bg-card border border-white/5 rounded-lg text-sm flex items-center gap-2">
-            <span class="material-icons-round text-sm">download</span> Export
-        </button>
-        <button class="px-4 py-2 bg-primary text-black rounded-lg text-sm font-bold flex items-center gap-2">
-            <span class="material-icons-round text-sm">refresh</span> Live View
-        </button>
-    </div>
-</div>
-
 <!-- METRICS -->
 <div class="grid grid-cols-4 gap-6">
-    <div class="bg-card p-2 rounded-2xl">
+    <div class="bg-card p-4 rounded-2xl">
         <p class="text-muted text-sm">Total Power</p>
-        <p class="text-3xl font-mono mt-2">4.28 <span class="text-sm">kW</span></p>
+        <p class="text-3xl font-mono mt-2">
+            <span id="power">4.28</span> <span class="text-sm">kW</span>
+        </p>
     </div>
-    <div class="bg-card p-6 rounded-2xl">
+
+    <div class="bg-card p-4 rounded-2xl">
         <p class="text-muted text-sm">Voltage</p>
-        <p class="text-3xl font-mono mt-2">42.9 <span class="text-sm">V</span></p>
+        <p class="text-3xl font-mono mt-2">
+            <span id="voltage">42.9</span> <span class="text-sm">V</span>
+        </p>
     </div>
-    <div class="bg-card p-6 rounded-2xl">
+
+    <div class="bg-card p-4 rounded-2xl">
         <p class="text-muted text-sm">Current</p>
-        <p class="text-3xl font-mono mt-2">12.5 <span class="text-sm">A</span></p>
+        <p class="text-3xl font-mono mt-2">
+            <span id="current">12.5</span> <span class="text-sm">A</span>
+        </p>
     </div>
-    <div class="bg-card p-6 rounded-2xl">
+
+    <div class="bg-card p-4 rounded-2xl">
         <p class="text-muted text-sm">Avg Humidity</p>
-        <p class="text-3xl font-mono mt-2">27.8 <span class="text-sm">%</span></p>
+        <p class="text-3xl font-mono mt-2">
+            <span id="humidity">27.8</span> <span class="text-sm">%</span>
+        </p>
     </div>
 </div>
 
@@ -159,30 +119,58 @@
 <div>
     <h2 class="text-lg font-semibold mb-4">Temperature Sensors</h2>
     <div class="grid grid-cols-4 gap-4">
-        <div class="bg-card p-4 rounded-xl">TEMP-01<br><span class="text-xl font-mono">-25.0°C</span></div>
-        <div class="bg-card p-4 rounded-xl">TEMP-02<br><span class="text-xl font-mono">-25.0°C</span></div>
-        <div class="bg-card p-4 rounded-xl text-primary">TEMP-03<br><span class="text-xl font-mono">-25.01°C</span></div>
-        <div class="bg-card p-4 rounded-xl">TEMP-04<br><span class="text-xl font-mono">29.35°C</span></div>
-        <div class="bg-card p-4 rounded-xl">TEMP-05<br><span class="text-xl font-mono">-25.0°C</span></div>
-        <div class="bg-card p-4 rounded-xl text-red">TEMP-06<br><span class="text-xl font-mono">54.97°C</span></div>
-        <div class="bg-card p-4 rounded-xl text-red">TEMP-07<br><span class="text-xl font-mono">55.49°C</span></div>
-        <div class="bg-card p-4 rounded-xl">TEMP-08<br><span class="text-xl font-mono">30.87°C</span></div>
+        <div class="bg-card p-4 rounded-xl">TEMP-01<br><span id="temp1" class="text-xl font-mono">-25.0</span>°C</div>
+        <div class="bg-card p-4 rounded-xl">TEMP-02<br><span id="temp2" class="text-xl font-mono">-25.0</span>°C</div>
+        <div class="bg-card p-4 rounded-xl text-primary">TEMP-03<br><span id="temp3" class="text-xl font-mono">-25.01</span>°C</div>
+        <div class="bg-card p-4 rounded-xl">TEMP-04<br><span id="temp4" class="text-xl font-mono">29.35</span>°C</div>
+        <div class="bg-card p-4 rounded-xl">TEMP-05<br><span id="temp5" class="text-xl font-mono">-25.0</span>°C</div>
+        <div class="bg-card p-4 rounded-xl text-red">TEMP-06<br><span id="temp6" class="text-xl font-mono">54.97</span>°C</div>
+        <div class="bg-card p-4 rounded-xl text-red">TEMP-07<br><span id="temp7" class="text-xl font-mono">55.49</span>°C</div>
+        <div class="bg-card p-4 rounded-xl">TEMP-08<br><span id="temp8" class="text-xl font-mono">30.87</span>°C</div>
     </div>
 </div>
 
-<!-- TEMPERATURE -->
+<!-- PRESSURE -->
 <div>
     <h2 class="text-lg font-semibold mb-4">Pressure Sensors</h2>
     <div class="grid grid-cols-4 gap-4">
-        <div class="bg-card p-4 rounded-xl">PRESSURE-01<br><span class="text-xl font-mono">143.51 Psi</span></div>
-        <div class="bg-card p-4 rounded-xl">PRESSURE-02<br><span class="text-xl font-mono">162.58</span></div>
-        <div class="bg-card p-4 rounded-xl text-primary">PRESSURE-03<br><span class="text-xl font-mono">232.69 Psi</span></div>
-        <div class="bg-card p-4 rounded-xl text-primary">PRESSURE-04<br><span class="text-xl font-mono">232.69 Psi</span></div>
+        <div class="bg-card p-4 rounded-xl">PRESSURE-01<br><span id="p1" class="text-xl font-mono">143.51</span> Psi</div>
+        <div class="bg-card p-4 rounded-xl">PRESSURE-02<br><span id="p2" class="text-xl font-mono">162.58</span> Psi</div>
+        <div class="bg-card p-4 rounded-xl text-primary">PRESSURE-03<br><span id="p3" class="text-xl font-mono">232.69</span> Psi</div>
+        <div class="bg-card p-4 rounded-xl text-primary">PRESSURE-04<br><span id="p4" class="text-xl font-mono">232.69</span> Psi</div>
     </div>
 </div>
 
-
 </section>
 </main>
+
+<!-- LIVE FLUCTUATION SCRIPT -->
+<script>
+function fluctuate(id, min, max, step, decimals = 2) {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    let value = parseFloat(el.innerText);
+    const delta = (Math.random() * step * 2) - step;
+    value += delta;
+    value = Math.max(min, Math.min(max, value));
+    el.innerText = value.toFixed(decimals);
+}
+
+setInterval(() => {
+    fluctuate("power", 4.1, 4.5, 0.05);
+    fluctuate("voltage", 42.5, 43.2, 0.05);
+    fluctuate("current", 12.2, 12.9, 0.08);
+    fluctuate("humidity", 26.5, 29.5, 0.2, 1);
+
+    fluctuate("temp1", -26, -24, 0.1, 1);
+    fluctuate("temp4", 28.5, 30.5, 0.15, 2);
+    fluctuate("temp6", 53.5, 56.5, 0.2, 2);
+
+    fluctuate("p1", 140, 148, 0.5, 2);
+    fluctuate("p2", 158, 168, 0.6, 2);
+}, 1500);
+</script>
+
 </body>
 </html>
